@@ -122,6 +122,9 @@
 
     watch: {
       pageStack(after, before) {
+        if (this.$children.length === 0) {
+          return;
+        }
         if (this.$el.hasAttribute('swipeable') && this.$children.length !== this.$el.children.length) {
           return;
         }
